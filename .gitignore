@@ -3,3 +3,9 @@ node_modules/
 .next/
 
 next-env.d.ts
+
+.amplify/
+amplify_outputs.json
+
+.env
+.env.local

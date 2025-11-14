@@ -7,10 +7,13 @@ const schema = a.schema({
       tags: a.string().array(),
       memo: a.string().required(),
     })
-    .authorization((allow) => [allow.publicApiKey()]),
+    .authorization((allow) => [allow.owner()]),
 });
 
 export type Schema = ClientSchema<typeof schema>;
 export const data = defineData({
   schema,
+  authorizationModes: {
+    defaultAuthorizationMode: 'userPool',
+  },
 });
