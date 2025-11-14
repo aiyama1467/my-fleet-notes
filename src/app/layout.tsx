@@ -1,4 +1,5 @@
 import '@/globals.css';
+import ConfigureAmplifyClientSide from '@/components/configure-amplify';
 import Header from '@/components/layout/header';
 
 export default function RootLayout({
@@ -9,6 +10,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className="bg-black text-white">
+        <ConfigureAmplifyClientSide />
         <Header />
         <main>{children}</main>
       </body>

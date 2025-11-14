@@ -20,6 +20,7 @@
   "license": "ISC",
   "packageManager": "pnpm@10.17.1",
   "dependencies": {
+    "@aws-amplify/adapter-nextjs": "^1.6.11",
     "@radix-ui/react-label": "^2.1.8",
     "@radix-ui/react-slot": "^1.2.4",
     "aws-amplify": "^6.15.8",

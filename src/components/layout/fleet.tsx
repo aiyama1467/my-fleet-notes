@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/card';
 
 type FleetItem = {
-  id: number;
+  id: string;
   title: string;
   tags: string[];
   memo: string;
