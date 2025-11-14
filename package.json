@@ -11,7 +11,7 @@
     "format": "biome format --write",
     "check": "biome check --write",
     "sandbox:deploy": "dotenvx run -- npx ampx sandbox",
-    "sandbox:destroy": "dotenvx run -- npx ampx destroy",
+    "sandbox:destroy": "dotenvx run -- npx ampx sandbox delete",
     "sandbox:seed": "tsx tooling/scripts/seed.ts",
     "postinstall": "lefthook install"
   },
