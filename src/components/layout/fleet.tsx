@@ -1,3 +1,5 @@
+import { format, formatDistanceToNow } from 'date-fns';
+import { ja } from 'date-fns/locale';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -17,6 +19,21 @@ type FleetItem = {
 };
 
 export function Fleet(fleet: FleetItem) {
+  const formattedCreated = format(
+    new Date(fleet.createdAt),
+    'yyyy/MM/dd HH:mm',
+    {
+      locale: ja,
+    },
+  );
+  const lastUpdatedRelative = formatDistanceToNow(
+    new Date(fleet.lastUpdatedAt),
+    {
+      addSuffix: true,
+      locale: ja,
+    },
+  );
+
   return (
     <div className="grid gap-4 sm:gap-6">
       <Card
@@ -47,10 +64,8 @@ export function Fleet(fleet: FleetItem) {
           </p>
         </CardContent>
         <CardFooter className="flex gap-3 justify-end">
-          <p className="text-xs text-gray-400">Created: {fleet.createdAt}</p>
-          <p className="text-xs text-gray-400">
-            Last updated: {fleet.lastUpdatedAt}
-          </p>
+          <p className="text-xs text-gray-400">作成: {formattedCreated}</p>
+          <p className="text-xs text-gray-400">更新: {lastUpdatedRelative}</p>
         </CardFooter>
       </Card>
     </div>
