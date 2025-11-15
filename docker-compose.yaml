@@ -5,8 +5,9 @@ services:
       - "5432:5432"
     restart: always
     environment:
-      - POSTGRES_USER=${USER_NAME}
-      - POSTGRES_PASSWORD=${USER_PASS}
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=my_fleet_notes
     volumes:
       - db_vol:/var/lib/postgresql/data
 
