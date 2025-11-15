@@ -1,4 +1,5 @@
 import { Fleet } from '@/components/layout/fleet';
+import { withAuth } from '@/lib/auth';
 
 const fleetsData = [
   {
@@ -43,7 +44,7 @@ const fleetsData = [
   },
 ];
 
-export default async function Page() {
+export default withAuth(async () => {
   const fleets = await new Promise<typeof fleetsData>((resolve) =>
     setTimeout(() => {
       resolve(fleetsData);
@@ -65,4 +66,4 @@ export default async function Page() {
       ))}
     </div>
   );
-}
+});
