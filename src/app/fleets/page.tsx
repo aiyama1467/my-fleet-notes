@@ -1,5 +1,4 @@
 import { Fleet } from '@/components/layout/fleet';
-import { Skeleton } from '@/components/ui/skeleton';
 
 const fleetsData = [
   {
