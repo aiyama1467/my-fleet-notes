@@ -17,8 +17,7 @@ export default function RootLayout({
     >
       <html lang="ja">
         <body className="bg-black text-white">
-          <Header />
-          <main>{children}</main>
+          <div>{children}</div>
         </body>
       </html>
     </ClerkProvider>
