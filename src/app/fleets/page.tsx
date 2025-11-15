@@ -1,6 +1,7 @@
 import { Fleet } from '@/components/layout/fleet';
+import { Skeleton } from '@/components/ui/skeleton';
 
-const fleets = [
+const fleetsData = [
   {
     id: '1',
     title: '週末の買い物リスト',
@@ -44,6 +45,12 @@ const fleets = [
 ];
 
 export default async function Page() {
+  const fleets = await new Promise<typeof fleetsData>((resolve) =>
+    setTimeout(() => {
+      resolve(fleetsData);
+    }, 1000),
+  );
+
   return (
     <div className="flex flex-col gap-5 w-full py-4 px-40">
       {fleets?.map((fleet) => (
