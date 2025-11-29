@@ -1,3 +1,4 @@
+import { SignOutButton } from '@clerk/nextjs';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -26,6 +27,11 @@ export default function Header() {
           <Button asChild size="sm">
             <Link href="/fleets">New Fleet</Link>
           </Button>
+          <SignOutButton>
+            <Button size="sm" variant="outline">
+              ログアウト
+            </Button>
+          </SignOutButton>
         </div>
       </div>
     </header>
