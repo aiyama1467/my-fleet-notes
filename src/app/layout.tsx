@@ -14,9 +14,7 @@ export default function RootLayout({
       }}
     >
       <html lang="ja">
-        <body className="bg-black text-white">
-          <div>{children}</div>
-        </body>
+        <body className="dark bg-background text-foreground">{children}</body>
       </html>
     </ClerkProvider>
   );

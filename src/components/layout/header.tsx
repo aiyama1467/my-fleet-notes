@@ -4,7 +4,7 @@ import { Input } from '@/components/ui/input';
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-white/10">
+    <header className="sticky top-0 z-50 w-full border-b border-border">
       <div className="flex justify-between h-16 px-4">
         <div className="flex gap-3 items-center">
           <Link href="/">
@@ -12,10 +12,8 @@ export default function Header() {
               My Fleet Notes
             </span>
           </Link>
-          <nav className="text-sm text-white/80">
-            <Link className="hover:text-white" href="/fleets">
-              Fleets
-            </Link>
+          <nav className="text-sm">
+            <Link href="/fleets">Fleets</Link>
           </nav>
         </div>
 
@@ -25,7 +23,7 @@ export default function Header() {
               <Input aria-label="Search" placeholder="Search..." />
             </form>
           </div>
-          <Button asChild size="sm" variant="secondary">
+          <Button asChild size="sm">
             <Link href="/fleets">New Fleet</Link>
           </Button>
         </div>

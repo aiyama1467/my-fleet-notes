@@ -36,21 +36,16 @@ export function Fleet(fleet: FleetItem) {
 
   return (
     <div className="grid gap-4 sm:gap-6">
-      <Card
-        className="bg-primary text-white border-white/10 transition-colors hover:bg-primary/90"
-        key={fleet.id}
-      >
+      <Card key={fleet.id}>
         <CardHeader>
           <div className="flex justify-between">
             <CardTitle className="text-lg">{fleet.title}</CardTitle>
-            <Button size="sm" variant="secondary">
-              Edit
-            </Button>
+            <Button size="sm">Edit</Button>
           </div>
           <div className="flex gap-2">
             {fleet.tags.map((tag) => (
               <span
-                className="rounded-full border border-white/20 bg-white/10 px-2 py-0.5 text-xs"
+                className="rounded-full border border-border px-2 py-0.5 text-xs"
                 key={tag}
               >
                 {tag}
@@ -59,13 +54,13 @@ export function Fleet(fleet: FleetItem) {
           </div>
         </CardHeader>
         <CardContent className="pt-0">
-          <p className="whitespace-pre-line text-sm leading-relaxed text-white/90">
+          <p className="whitespace-pre-line text-sm leading-relaxed">
             {fleet.memo}
           </p>
         </CardContent>
         <CardFooter className="flex gap-3 justify-end">
-          <p className="text-xs text-gray-400">作成: {formattedCreated}</p>
-          <p className="text-xs text-gray-400">更新: {lastUpdatedRelative}</p>
+          <p className="text-xs">作成: {formattedCreated}</p>
+          <p className="text-xs">更新: {lastUpdatedRelative}</p>
         </CardFooter>
       </Card>
     </div>
