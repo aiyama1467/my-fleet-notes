@@ -38,10 +38,10 @@ export function FleetSkeleton() {
   );
 }
 
-export function FleetListSkeleton({ count = 3 }: { count?: number }) {
+export function FleetListSkeleton() {
   return (
     <div className="flex flex-col gap-5 w-full py-4 px-40">
-      {Array.from({ length: count }).map((_, i) => (
+      {Array.from({ length: 5 }).map((_, i) => (
         // biome-ignore lint/suspicious/noArrayIndexKey: スケルトンは静的なリストなので安全
         <FleetSkeleton key={`skeleton-${i}`} />
       ))}

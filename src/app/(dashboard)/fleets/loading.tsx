@@ -1,5 +1,5 @@
-import { FleetListSkeleton } from '@/components/layout/fleet-skeleton';
+import { FleetListSkeleton } from '@/features/fleet/components/fleet-skeleton';
 
 export default function Loading() {
-  return <FleetListSkeleton count={5} />;
+  return <FleetListSkeleton />;
 }
