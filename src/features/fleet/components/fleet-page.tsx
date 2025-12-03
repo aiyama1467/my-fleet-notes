@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Fleet } from '@/features/fleet/components/fleet';
 import { trpc } from '@/trpc/server';
+import CreateFleetModal from './create-fleet-modal';
 import { FleetListSkeleton } from './fleet-skeleton';
 
 interface FleetPageProps {
@@ -36,7 +37,7 @@ export default function FleetPage({ userId }: FleetPageProps) {
         <form action="#" className="w-full max-w-xs">
           <Input aria-label="Search" placeholder="Search..." />
         </form>
-        <Button size="sm">New Fleet</Button>
+        <CreateFleetModal trigger={<Button size="sm">New Fleet</Button>} />
       </div>
       <Suspense fallback={<FleetListSkeleton />}>
         <FleetList userId={userId} />
