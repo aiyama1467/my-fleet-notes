@@ -1,4 +1,4 @@
-import RootLayout from '@/components/layout';
+import RootLayout from '@/components/root-layout';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return <RootLayout>{children}</RootLayout>;
