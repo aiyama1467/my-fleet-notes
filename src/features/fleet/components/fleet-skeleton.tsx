@@ -40,7 +40,7 @@ export function FleetSkeleton() {
 
 export function FleetListSkeleton() {
   return (
-    <div className="flex flex-col gap-5 w-full py-4 px-40">
+    <div className="flex flex-col gap-5">
       {Array.from({ length: 5 }).map((_, i) => (
         // biome-ignore lint/suspicious/noArrayIndexKey: スケルトンは静的なリストなので安全
         <FleetSkeleton key={`skeleton-${i}`} />

@@ -1,7 +1,6 @@
 import { SignOutButton } from '@clerk/nextjs';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 
 const navItems = [
   { href: '/fleets', label: 'Fleets' },
@@ -26,14 +25,6 @@ export default function Header() {
         </div>
 
         <div className="flex min-w-0 items-center gap-2 sm:gap-3">
-          <div className="hidden min-w-[200px] max-w-xs sm:block">
-            <form action="#" className="w-full">
-              <Input aria-label="Search" placeholder="Search..." />
-            </form>
-          </div>
-          <Button asChild size="sm">
-            <Link href="/fleets">New Fleet</Link>
-          </Button>
           <SignOutButton>
             <Button size="sm" variant="outline">
               ログアウト

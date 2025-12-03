@@ -1,15 +1,19 @@
+import { Suspense } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { Fleet } from '@/features/fleet/components/fleet';
 import { trpc } from '@/trpc/server';
+import { FleetListSkeleton } from './fleet-skeleton';
 
 interface FleetPageProps {
   userId: string;
 }
 
-export default async function FleetPage({ userId }: FleetPageProps) {
+async function FleetList({ userId }: { userId: string }) {
   const fleets = await trpc.getFleets({ userId });
 
   return (
-    <div className="flex flex-col gap-5 w-full py-4 px-40">
+    <div className="flex flex-col gap-5">
       {fleets?.map((fleet) => (
         <Fleet
           createdAt={fleet.createdAt.toISOString()}
@@ -21,6 +25,22 @@ export default async function FleetPage({ userId }: FleetPageProps) {
           title={fleet.title}
         />
       ))}
+    </div>
+  );
+}
+
+export default function FleetPage({ userId }: FleetPageProps) {
+  return (
+    <div className="flex flex-col w-full py-4 px-40">
+      <div className="flex items-center justify-between mb-5">
+        <form action="#" className="w-full max-w-xs">
+          <Input aria-label="Search" placeholder="Search..." />
+        </form>
+        <Button size="sm">New Fleet</Button>
+      </div>
+      <Suspense fallback={<FleetListSkeleton />}>
+        <FleetList userId={userId} />
+      </Suspense>
     </div>
   );
 }
