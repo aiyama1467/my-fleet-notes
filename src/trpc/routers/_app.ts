@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import { procedure, router } from '@/trpc/init';
-import { getFleetsByUserId } from '../usecase/get-fleets-by-user-id';
+import { getFleetsByUserId } from '../../features/fleet/server/get-fleets-by-user-id';
 
 export const appRouter = router({
   hello: procedure
